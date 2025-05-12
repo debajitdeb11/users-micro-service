@@ -26,9 +26,8 @@ public class UserController {
         return new ResponseEntity<>(this.userService.createUser(user), HttpStatus.CREATED);
     }
 
-    @GetMapping("user/{userId}/quiz")
+    @GetMapping("{userId}/quiz")
     public ResponseEntity<List<QuestionDto>> getQuizQuestions(@PathVariable String userId) {
-        System.out.println(userId);
-        return new ResponseEntity<>(null, HttpStatus.OK);
+        return new ResponseEntity<>(this.userService.getQuizForUserId(userId), HttpStatus.OK);
     }
 }

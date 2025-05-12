@@ -1,15 +1,19 @@
 package in.trelic.user_service_micro.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuestionDto {
-    private int questionId;
+@Getter
+@Setter
+public class QuestionDto implements Serializable {
+    private int qId;
     private String question;
-    private String option1;
-    private String option2;
-    private String option3;
-    private String option4;
+    private AnswerDto answer;
 }
